@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem"; // 사용할 컴포넌트를 가져온다.
+import Expenses from "./components/Expenses";
 
 function App() {
   const expenses = [
@@ -25,29 +25,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItem
-        // 하위 컴포넌트에 속성으로 데이터를 전달하는걸 props라고 한다.
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      />
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      />
-      <ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      />
-      <ExpenseItem
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      />
-      {/* 커스텀 컴포넌트는 반드시 대문자로 시작 하여야 한다.
-      (소문자는 HTML 내장 컴포넌트 이기 때문에) */}
+      <Expenses item={expenses} />
     </div>
   );
 }
