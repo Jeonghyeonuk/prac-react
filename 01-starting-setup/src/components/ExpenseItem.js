@@ -2,13 +2,19 @@ import React from "react";
 import "./ExpenseItem.css"; // CSS 파일을 import 하는방법
 
 function ExpenseItem() {
+  const date = new Date(2023, 5, 22);
+  const title = "Car Insurance";
+  const price = 299.99;
+
   return (
-    // class대신 className을 사용해야한다. Class는 자바스크립트 예약어이기대문에
+    // class대신 className을 사용해야한다. Class는 자바스크립트 예약어이기 때문에
     <div className="expense-item">
-      <div>March 27th 2021</div>
+      <div>{date.toISOString().slice(0, 10)}</div>
+      {/* {} 를 이용해서 자바스크립트 코드를 작성 할 수 있다.
+       Date는 객체기때문에 문자열로 변환이 필요하다. */}
       <div className="expense-item__description">
-        <h2>Car Insurance</h2>
-        <div className="expense-item__price">$300</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">${price}</div>
       </div>
     </div>
   );
