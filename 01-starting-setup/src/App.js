@@ -1,8 +1,12 @@
+import ExpenseItem from "./components/ExpenseItem"; // 사용할 컴포넌트를 가져온다.
+
 function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <p>이것도 화면에 보여!</p>
+      <ExpenseItem></ExpenseItem>
+      {/* 커스텀 컴포넌트는 반드시 대문자로 시작 하여야 한다.
+      (소문자는 HTML 내장 컴포넌트 이기 때문에) */}
     </div>
   );
 }
