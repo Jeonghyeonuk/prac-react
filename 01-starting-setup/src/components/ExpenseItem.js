@@ -1,11 +1,8 @@
 import React from "react";
 import "./ExpenseItem.css"; // CSS 파일을 import 하는방법
 
-function ExpenseItem() {
-  const date = new Date(2023, 5, 22);
-  const title = "Car Insurance";
-  const price = 299.99;
-
+function ExpenseItem(props) {
+  const { title, amount, date } = props;
   return (
     // class대신 className을 사용해야한다. Class는 자바스크립트 예약어이기 때문에
     <div className="expense-item">
@@ -14,7 +11,7 @@ function ExpenseItem() {
        Date는 객체기때문에 문자열로 변환이 필요하다. */}
       <div className="expense-item__description">
         <h2>{title}</h2>
-        <div className="expense-item__price">${price}</div>
+        <div className="expense-item__price">${amount}</div>
       </div>
     </div>
   );
