@@ -1,5 +1,5 @@
 import React from "react";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   const expenses = [
@@ -26,21 +26,21 @@ function App() {
 
   /**
    * jsx 더 자세히 알아보기
-   * 아래에 주석되어있는 return문이 만들어지는건 React.creatElement()함수로 만들어지는거고 첫번째인자는 태그, 두번째인자는 속성, 세번쩨인자는 태그 사이에 들어갈 내용이 온다.
+   * 아래에 return문이 만들어지는건 React.creatElement()함수로 만들어지는거고 첫번째인자는 태그, 두번째인자는 속성, 세번쩨인자는 태그 사이에 들어갈 내용이 온다.
    */
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h2", {}, "Let's get started"),
-    React.createElement(Expenses, { item: expenses })
-  );
-
-  // return (
-  //   <div>
-  //     <h2>Let's get started!</h2>
-  //     <Expenses item={expenses} />
-  //   </div>
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Let's get started"),
+  //   React.createElement(Expenses, { item: expenses })
   // );
+
+  return (
+    <div>
+      <h2>Let's get started!</h2>
+      <Expenses item={expenses} />
+    </div>
+  );
 }
 
 export default App;

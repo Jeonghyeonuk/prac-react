@@ -1,6 +1,6 @@
 import React from "react";
 import "./ExpenseItem.css"; // CSS 파일을 import 하는방법
-import Card from "./Card";
+import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {

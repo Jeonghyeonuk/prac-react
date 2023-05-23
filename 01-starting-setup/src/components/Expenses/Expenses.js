@@ -1,6 +1,6 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem"; // 사용할 컴포넌트를 가져온다.
-import Card from "./Card";
+import Card from "../UI/Card";
 import "./Expenses.css";
 
 function Expenses(props) {
