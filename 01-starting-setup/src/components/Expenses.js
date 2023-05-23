@@ -1,11 +1,12 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem"; // 사용할 컴포넌트를 가져온다.
+import Card from "./Card";
 import "./Expenses.css";
 
 function Expenses(props) {
   const { item } = props;
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem
         title={item[0].title}
         amount={item[0].amount}
@@ -26,7 +27,7 @@ function Expenses(props) {
         amount={item[3].amount}
         date={item[3].date}
       />
-    </div>
+    </Card>
   );
 }
 
