@@ -6,6 +6,10 @@ import ExpenseDate from "./ExpenseDate";
 function ExpenseItem(props) {
   // 상위 컴포넌트(App.js)에서 속성한 값들을 props라는 객체로 받는다.
   const { title, amount, date } = props; // props객체에서 필요한 값들을 추출한다 이때 변수명은 상위컴포넌트에서 속성에 지정한 이름과 동일해야한다.
+  const onClickHandler = () => {
+    console.log("click");
+  };
+
   return (
     // class대신 className을 사용해야한다. Class는 자바스크립트 예약어이기 때문에
     <Card className="expense-item">
@@ -16,6 +20,7 @@ function ExpenseItem(props) {
         <h2>{title}</h2>
         <div className="expense-item__price">${amount}</div>
       </div>
+      <button onClick={onClickHandler}>change title</button>
     </Card>
   );
 }
