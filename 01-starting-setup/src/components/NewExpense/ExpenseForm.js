@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm() {
+function ExpenseForm(props) {
   /**
    * State를 여러개로 관리하는법
    */
@@ -53,7 +53,13 @@ function ExpenseForm() {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
+    /**
+     * 자식의 데이터를 부모로 넘기기
+     * 1. 부모 컴포넌트에서 props로 데이터가 아닌 함수를 전달하고
+     * 2. 자식에서 해당 함수를 실행 시키면서 파라미터로 데이터를 넘긴다.
+     */
+    props.onSaveExpenseData(expenseData);
+
     setEnteredTitle(""); // input의 value값에 양방향 바인딩
     setEnteredDate(""); // input의 value값에 양방향 바인딩
     setEnteredAmount(""); // input의 value값에 양방향 바인딩

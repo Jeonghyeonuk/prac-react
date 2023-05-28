@@ -36,9 +36,13 @@ function App() {
   //   React.createElement(Expenses, { item: expenses })
   // );
 
+  const addExpenseData = (data) => {
+    console.log(data);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense addExpenseData={addExpenseData} />
       <Expenses item={expenses} />
     </div>
   );
