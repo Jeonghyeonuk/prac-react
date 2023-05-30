@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem"; // 사용할 컴포넌트를 가져온다.
+import ExpensesList from "./ExpensesList";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
@@ -14,6 +14,7 @@ function Expenses(props) {
   const filteredExpenses = props.items.filter((item) => {
     return item.date.getFullYear().toString() === filteredYear;
   });
+
   return (
     <div>
       <Card className="expenses">
@@ -21,14 +22,7 @@ function Expenses(props) {
           selected={filteredYear}
           onChangeFilter={onChangeHandler}
         />
-        {filteredExpenses.map((item) => (
-          <ExpenseItem
-            key={item.id}
-            title={item.title}
-            amount={item.amount}
-            date={item.date}
-          />
-        ))}
+        <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
   );

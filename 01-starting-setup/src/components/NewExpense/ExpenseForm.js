@@ -65,6 +65,10 @@ function ExpenseForm(props) {
     setEnteredAmount(""); // input의 value값에 양방향 바인딩
   };
 
+  const stopEditingHandler = () => {
+    props.onStopEditingHandler();
+  };
+
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -98,6 +102,9 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={stopEditingHandler} type="button">
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
